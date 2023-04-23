@@ -1,12 +1,13 @@
 import { ImputForm, Label } from '../Form/Form.styled';
 
-import { filterContact } from 'redux/contactSlice';
+import { filterContact } from 'redux/filterSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { getFilter } from 'redux/selector';
 
 const Filter = () => {
   const dispatch = useDispatch();
   const filter = useSelector(getFilter);
+  console.log(filter);
 
   return (
     <ImputForm>

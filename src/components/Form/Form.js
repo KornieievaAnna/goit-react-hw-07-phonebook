@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ImputForm, Label } from './Form.styled';
 
-import { addContact } from 'redux/contactSlice';
+import { addContact } from 'redux/operations';
 import { useDispatch } from 'react-redux';
 
 

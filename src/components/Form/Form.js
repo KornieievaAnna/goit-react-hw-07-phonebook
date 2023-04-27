@@ -2,19 +2,21 @@ import { useState } from 'react';
 import { ImputForm, Label } from './Form.styled';
 
 import { addContact } from 'redux/operations';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
+import { getContacts } from 'redux/selector';
 
 export function Form() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-
-
+  const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch(addContact({ name, number }));
+    contacts.map(contact => contact.name).includes(name)
+      ? alert(`${name} is already in contacts`)
+      : dispatch(addContact({ name, number }));
     setName('');
     setNumber('');
   };

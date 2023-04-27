@@ -21,9 +21,9 @@ export default function ContactList() {
 
   return (
     <ul>
-      {contacts.map(({ id, name, number }) => (
+      {contacts.map(({ id, name, phone }) => (
         <Contacts key={id}>
-          {name}: {number}
+          {name}: {phone}
           <ButtonDelete onClick={() => dispatch(deleteContact(id))}>
             Delete
           </ButtonDelete>
